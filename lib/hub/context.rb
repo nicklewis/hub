@@ -61,7 +61,7 @@ module Hub
     end
 
     def remotes
-      list = GIT_CONFIG['remote'].split("\n")
+      list = GIT_CONFIG['remote'].to_s.split("\n")
       main = list.delete('origin') and list.unshift(main)
       list
     end
